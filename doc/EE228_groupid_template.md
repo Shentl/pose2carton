@@ -21,26 +21,6 @@ mayapy get-pip.py
 ```
 mayapy -m pip install -i https://pypi.anaconda.org/carlkl/simple numpy
 ```
-## Requirements
-- Python environment 3.6
-```
-conda create -n pose2cartoon_env python=3.6
-conda activate pose2cartoon_env
-```
-- python packages
-```
-pip install -r requirements.txt
-```
-- `winehq-stable` for cartoon face warping in Ubuntu (https://wiki.winehq.org/Ubuntu). Tested on Ubuntu16.04, wine==5.0.3.
-```
-sudo dpkg --add-architecture i386
-wget -nc https://dl.winehq.org/wine-builds/winehq.key
-sudo apt-key add winehq.key
-sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main'
-sudo apt update
-sudo apt install --install-recommends winehq-stable
-```
-
 
 # 匹配流程
 
@@ -64,7 +44,7 @@ sudo apt install --install-recommends winehq-stable
 
 这里放置来自你最终匹配结果的截图， 如
 
-![image](../img/pose2carton.png)
+![image](../img/9838.png)
 
 
 
@@ -75,4 +55,4 @@ sudo apt install --install-recommends winehq-stable
 
 所涉及代码及数据的最终解释权归倪冰冰老师课题组所有
 
-Group xx
+Group 5
