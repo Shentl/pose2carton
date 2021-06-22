@@ -22,6 +22,21 @@ mayapy get-pip.py
 mayapy -m pip install -i https://pypi.anaconda.org/carlkl/simple numpy
 ```
 
+- 验证，运行以下命令不报错
+```
+import maya
+import maya.standalone
+maya.standalone.initialize(name='python')
+import maya.OpenMaya as om
+import maya.cmds as cmds
+import pymel.core as pm
+import maya.mel as mel
+import numpy as np
+import os
+import glob
+```
+
+
 # 匹配流程
 
 - 在transfer.py中输入字典序列manual_model_to_smpl{}，里面是选用模型和给定的SMPL模型的关节点的匹配
