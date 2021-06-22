@@ -36,7 +36,16 @@ mayapy -m pip install -i https://pypi.anaconda.org/carlkl/simple numpy
 
 # 新增脚本说明
 
-如果你写了自己的脚本来处理数据或进行可视化，请在这里进行相关说明(如何使用等)； 如果没有，请忽略该模块。
+- 由于可视化可能时间过长且中间容易断掉，造成视频无法生成，在vis.py中添加 
+```
+if (idx==150) or (idx==300):
+        compose_video()
+```
+分别在生成150张图片、300张图片、全跑完时生成一次视频，确保不因中间断掉而没有视频。
+
+- 由于从网上下载模型可能存在多个mesh，导致运行原代码会生成一些缺少“部位”的obj文件。所以我们对fbx_parser.py中的record_obj 函数进行如下改进，使之能够生成各mesh对应的mtl和obj文件
+![image](../img/a.jpg)
+geoList列表记录了mesh信息，通过循环访问，可以遍历所有mesh，并以不同的文件名生成。之后可以通过blender软件读入生成的各个obj文件，将多个mesh合并，再导出为一个包含所有mesh的mtl和obj文件。
 
 
 
@@ -45,6 +54,8 @@ mayapy -m pip install -i https://pypi.anaconda.org/carlkl/simple numpy
 这里放置来自你最终匹配结果的截图， 如
 
 ![image](../img/9838.png)
+
+![image](../img/1.png)
 
 
 
